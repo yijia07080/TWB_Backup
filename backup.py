@@ -38,9 +38,9 @@ def split_backup_zip(backup_zip_path, split_size):
 save_dir = "/home/eccdna/backup"
 base_path = "/home/eccdna"
 folder_names = [
-    # "bash_tool",
-    # "eccdna",
-    # "eccdna_dbtest_data",
+    "bash_tool",
+    "eccdna",
+    "eccdna_dbtest_data",
     "flow_eccDNA",
     "flow_metadata",
     "public_html"
