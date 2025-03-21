@@ -1,0 +1,17 @@
+[main ed46066] 20250321
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 backup.log
+To https://github.com/yijia07080/TWB_Backup.git
+   a554446..ed46066  main -> main
+branch 'main' set up to track 'origin/main'.
+Deleted /home/eccdna/backup
+Created /home/eccdna/backup
+Added   /home/eccdna/bash_tool
+Added   /home/eccdna/eccdna
+Added   /home/eccdna/eccdna_dbtest_data
+Added   /home/eccdna/flow_eccDNA
+Added   /home/eccdna/flow_metadata
+Added   /home/eccdna/public_html
+Backup complete.
+Backup split complete.
+Upload complete.
