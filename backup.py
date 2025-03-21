@@ -41,8 +41,8 @@ folder_names = [
     # "bash_tool",
     # "eccdna",
     # "eccdna_dbtest_data",
-    # "flow_eccDNA",
-    # "flow_metadata",
+    "flow_eccDNA",
+    "flow_metadata",
     "public_html"
 ]
 
