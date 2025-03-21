@@ -5,8 +5,9 @@ import subprocess
 from datetime import datetime
 
 def zip_folders(base_path, folder_names, save_dir):
-    shutil.rmtree(save_dir)
-    print(f"Deleted {save_dir}")
+    if os.path.isdir(save_dir):
+        shutil.rmtree(save_dir)
+        print(f"Deleted {save_dir}")
     os.makedirs(save_dir)
     print(f"Created {save_dir}")
     with zipfile.ZipFile(f'{save_dir}/backup.zip', 'w', zipfile.ZIP_DEFLATED) as zipf:
@@ -19,16 +20,16 @@ def zip_folders(base_path, folder_names, save_dir):
                     zipf.write(file_path, arcname)
             print(f"Added   {folder_path}")
 
-def upload_to_github(zip_filename, repo_path, commit_message):
-    subprocess.run(["git", "add", "."], cwd=repo_path, check=True)
-    subprocess.run(["git", "commit", "-m", commit_message], cwd=repo_path, check=True)
-    subprocess.run(["git", "branch", "-M", "main"], cwd=repo_path, check=True)
-    subprocess.run(["git", "push", "-u", "origin", "main"], cwd=repo_path, check=True)
+def upload_to_github(repo_path, commit_message):
+    subprocess.run(["/usr/bin/git", "add", "."], cwd=repo_path, check=True)
+    subprocess.run(["/usr/bin/git", "commit", "-m", commit_message], cwd=repo_path, check=True)
+    subprocess.run(["/usr/bin/git", "branch", "-M", "main"], cwd=repo_path, check=True)
+    subprocess.run(["/usr/bin/git", "push", "-u", "origin", "main"], cwd=repo_path, check=True)
 
 def split_backup_zip(backup_zip_path, split_size):
     output_path = backup_zip_path.replace("backup.zip", "backup_split.zip")
     subprocess.run(
-        ["zip", "-s", split_size, backup_zip_path, "--out", output_path],
+        ["/usr/bin/zip", "-s", split_size, backup_zip_path, "--out", output_path],
         check=True,
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL
@@ -54,5 +55,5 @@ print("Backup split complete.")
 
 current_date = datetime.now().strftime("%Y%m%d")
 commit_message = f"{current_date}"
-upload_to_github(save_dir, base_path, commit_message)
+upload_to_github(base_path, commit_message)
 print("Upload complete.")
