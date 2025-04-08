@@ -47,3 +47,19 @@ Added   /home/eccdna/public_html
 Backup complete.
 Backup split complete.
 Upload complete.
+[main 1f0afd5] 20250402
+ 1 file changed, 16 insertions(+)
+To https://github.com/yijia07080/TWB_Backup.git
+   79692d9..1f0afd5  main -> main
+branch 'main' set up to track 'origin/main'.
+Deleted /home/eccdna/backup
+Created /home/eccdna/backup
+Added   /home/eccdna/bash_tool
+Added   /home/eccdna/eccdna
+Added   /home/eccdna/eccdna_dbtest_data
+Added   /home/eccdna/flow_eccDNA
+Added   /home/eccdna/flow_metadata
+Added   /home/eccdna/public_html
+Backup complete.
+Backup split complete.
+Upload complete.
